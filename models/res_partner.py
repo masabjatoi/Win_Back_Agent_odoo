@@ -95,7 +95,7 @@ class ResPartner(models.Model):
             ('name', '=', 'Lisa Win-Back Campaign Outreach')
         ], limit=1)
         if not template:
-            template = self.env.ref('lisa_win_back_agent.lisa_winback_campaign_outreach_template', raise_if_not_found=False)
+            template = self.env.ref('Win_Back_Agent_odoo.lisa_winback_campaign_outreach_template', raise_if_not_found=False)
             
         if not template:
             raise UserError(_("Mail Template 'Lisa Win-Back Campaign Outreach' not found. Please run the setup script or configure it."))
@@ -207,7 +207,7 @@ class ResPartner(models.Model):
     def action_view_winback_campaign(self):
         self.ensure_one()
         campaign = self.env['winback.campaign'].search([('partner_id', '=', self.id)], limit=1)
-        action = self.env["ir.actions.actions"]._for_xml_id("lisa_win_back_agent.action_winback_campaign")
+        action = self.env["ir.actions.actions"]._for_xml_id("Win_Back_Agent_odoo.action_winback_campaign")
         if campaign:
             action.update({
                 'res_id': campaign.id,

@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
-                <app string="Lisa Win-Back" name="lisa_win_back_agent">
+                <app string="Lisa Win-Back" name="Win_Back_Agent_odoo">
                     <block title="Lisa Win-Back AI Agent Settings" name="lisa_wb_agent_setting_container">
                         <setting help="Number of days of purchase inactivity before campaign starts" id="lisa_wb_inactivity_setting">
                             <field name="lisa_wb_inactivity_threshold_days"/>
